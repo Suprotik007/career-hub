@@ -1,14 +1,24 @@
 import React from 'react';
 import { motion } from "motion/react"
+import img1 from '../assets/img1.jpg'
+import img2 from '../assets/img2.jpg'
 const Banner = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-      className="max-w-sm rounded-lg shadow-2xl"
-    />
+  <div className="hero-content lg:flex-row-reverse">
+    <div className='flex-1'>
+        <motion.img
+         src={img1}
+         animate={{y:[0,290,0]}}
+         transition={{duration:8,repeat:Infinity}}
+         className='max-w-sm border-s-8 rounded-t-[40px] border-b-8 border-blue-500' alt="" />
+    </div>
+    <div className='flex-1'>
+        <motion.img src={img2}
+        animate={{x:[0,290,0]}}
+         transition={{duration:7,repeat:Infinity}} className='max-w-sm border-s-8 rounded-t-[40px] border-b-8 border-blue-500' alt="" />
+    </div>
     <div>
       <motion.h1
        animate={{ 
