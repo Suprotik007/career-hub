@@ -5,14 +5,14 @@ import { use } from 'react';
 import AuthContext from '../context/AuthContext';
 const Login = () => {
 
-        const {createUser}=use(AuthContext)
+        const {signInUser}=use(AuthContext)
             const handleLogin=e=>{
         e.preventDefault()
         const email=e.target.email.value
         const password=e.target.password.value
         console.log(email,password);
         
-        createUser(email,password)
+        signInUser(email,password)
         .then(result=>{
           console.log(result.user);
           
@@ -41,7 +41,7 @@ const Login = () => {
           <label className="label">Password</label>
           <input type="password" name='password'className="input" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button type='submit' className="btn btn-neutral mt-4">Register</button>
+          <button type='submit' className="btn btn-neutral mt-4">Login</button>
         </form>
       </div>
     </div>

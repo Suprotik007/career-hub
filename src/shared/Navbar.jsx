@@ -1,8 +1,14 @@
 import React from 'react';
+import { use } from 'react';
 import { Link } from 'react-router';
 import { NavLink } from 'react-router';
+import AuthContext from '../context/AuthContext';
 
 const Navbar = () => {
+  const{user,signOutUser}=use(AuthContext)
+  const handleSignOut=()=>{
+    signOutUser()
+  }
   const links= <>
   <NavLink to='/'>Home</NavLink>
   </>
@@ -40,9 +46,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-3">
-    <Link to='/register'> <button className="btn">Register</button> </Link>
-    <Link to='/login'> <button className="btn">Login</button> </Link>
     
+{
+  user? <button onClick={handleSignOut} className='btn btn-ghost'> Sign Out</button>: <>
+    <Link to='/login'> <button className="btn">Login</button> </Link>
+    <Link to='/register'> <button className="btn">Register</button> </Link>
+
+  </>
+}    
   </div>
 </div>
         </div>
