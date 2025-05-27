@@ -6,9 +6,9 @@ const JobCard = ({job}) => {
     const {_id,title,location,jobType,category,description,company,company_logo,requirements}=job
     return (
         <div>
-            <div className="card bg- shadow-sm">
+            <div className="card bg-black text-white p-3 shadow-sm">
   <figure>
-    <img
+    <img className='bg-base-300 '
       src={company_logo}/>
   </figure>
   <div className="card-body">
@@ -26,7 +26,7 @@ requirements.map((skill,index)=>
     </div>
   </div>
       <div className="card-actions justify-end">
-     <Link to={`/jobs/${_id}`}> <button className="btn btn-primary">Apply Now</button></Link>
+     <Link to={`/jobs/${_id}`}> <button className="btn btn-primary">Details</button></Link>
     </div>
 
 </div>
