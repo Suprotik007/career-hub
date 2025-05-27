@@ -10,14 +10,14 @@ const Banner = () => {
     <div className='flex-1'>
         <motion.img
          src={img1}
-         animate={{y:[0,290,0]}}
+         animate={{y:[0,170,0]}}
          transition={{duration:8,repeat:Infinity}}
          className='max-w-sm border-s-8 rounded-t-[40px] border-b-8 border-blue-500' alt="" />
     </div>
     <div className='flex-1'>
         <motion.img src={img2}
-        animate={{x:[0,290,0]}}
-         transition={{duration:7,repeat:Infinity}} className='max-w-sm border-s-8 rounded-t-[40px] border-b-8 border-blue-500' alt="" />
+        animate={{x:[0,200,0]}}
+         transition={{duration:8,repeat:Infinity}} className='max-w-sm border-s-8 rounded-t-[40px] border-b-8 border-blue-500' alt="" />
     </div>
     <div>
       <motion.h1
@@ -30,7 +30,7 @@ const Banner = () => {
       animate={{scale:1,transition:{duration:2}}} className="py-6 text-3xl font-bold">
         Remote 
         <motion.span animate={{
-            color:['#ff5733','#33ff33','##8a33ff'],
+            color:['#ff5733','#33ff33','#8a33ff'],
             transition:{duration:2,repeat:Infinity}
             }}>
             

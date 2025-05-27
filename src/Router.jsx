@@ -6,6 +6,7 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import JobDetails from './pages/JobDetails';
 
 const Router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const Router = createBrowserRouter([
          {
     path:'/login',
     Component:Login
+  },
+         {
+    path:'/jobs/:id',
+    Component:JobDetails
   }
     ]
   },
