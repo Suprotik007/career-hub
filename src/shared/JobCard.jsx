@@ -18,12 +18,11 @@ const JobCard = ({job}) => {
     </h2>
     <p>{description}</p>
     <div className="card-actions">
-    {
-requirements.map((skill,index)=>
-    <div key={index} className='badge badge-outline'>{skill}</div>
-)
-    }
-    </div>
+  {Array.isArray(requirements) && requirements.map((skill, index) => (
+    <div key={index} className="badge badge-outline">{skill}</div>
+  ))}
+</div>
+
   </div>
       <div className="card-actions justify-end">
      <Link to={`/jobs/${_id}`}> <button className="btn btn-primary">Details</button></Link>
