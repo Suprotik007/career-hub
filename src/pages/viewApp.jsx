@@ -3,6 +3,8 @@ import { useLoaderData, useParams } from 'react-router';
 
 const viewApp = () => {
     const apps=useLoaderData()
+    console.log(apps);
+    
 const {job_id}=useParams()
     return (
         <div>
@@ -21,14 +23,13 @@ const {job_id}=useParams()
       </tr>
     </thead>
     <tbody>
-     {
-        apps.applicant
-        // apps.map(app=> <tr key={app._id}>
-        //      <th>{app.applicant}</th>
-     
-        // {/* <button className='btn btn-neutral'><Link to={`/applications/${job._id}`}>View</Link></button> */}
-        // </tr>)
-     }
+     {(Array.isArray(apps) ? apps : []).map(app => (
+  <tr key={app._id}>
+    <td>{app.applicant}</td>
+    <td>{app.linkedIn}</td>
+  </tr>
+))}
+
     </tbody>
    
   </table>
