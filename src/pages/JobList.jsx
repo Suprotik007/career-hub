@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const JobList = ({myJobPromise}) => {
      const [jobs, setJob] = useState(null);
@@ -36,6 +37,7 @@ const JobList = ({myJobPromise}) => {
              <th>{job.title}</th>
         <th>{job.company}</th>
         <th>{job.location}</th>
+        <button className='btn btn-neutral'><Link to={`/applications/${job._id}`}>View</Link></button>
         </tr>)
      }
     </tbody>
